@@ -1,0 +1,41 @@
+---
+# output: bookdown::github_document2
+output:
+  bookdown::pdf_document2:
+    template: template.tex
+    keep_tex: true
+bibliography: refs.bib
+editor_options:
+  markdown:
+    wrap: sentence
+---
+
+<!--# The abstract is set up in the tex file.-->
+
+# Introduction
+
+add references using @wilson_statistical_1967
+
+<!--# Add comments using this -->
+
+# Background
+
+
+
+# Data
+
+
+# Methods
+
+# Results
+
+
+# Discussion
+
+# Conclusion
+
+
+# References
+
+
+

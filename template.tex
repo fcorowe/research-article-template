@@ -1,0 +1,135 @@
+\RequirePackage[l2tabu,orthodox]{nag}
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{crimson}
+\usepackage{helvet}
+\usepackage[strict,autostyle]{csquotes}
+\usepackage[USenglish]{babel}
+\usepackage{microtype}
+\usepackage{authblk}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{endnotes}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{rotating}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{url}
+\usepackage{soul}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[many]{tcolorbox}
+\newtcolorbox{mybox}{colback = black!5!gray!50, colframe = black!75!black, segmentation style={solid}} % create text box
+\usepackage{hanging}
+
+% location of figure files, via graphicx package
+\graphicspath{{./figures/}}
+
+% configure the page layout, via geometry package
+\geometry{
+	paper=letterpaper,
+	top=4cm,
+	bottom=4cm,
+	left=4cm,
+	right=4cm}
+\setstretch{1.02}
+\clubpenalty=10000
+\widowpenalty=10000
+
+% set section/subsection headings as the sans serif font
+\titleformat{\section}{\normalfont\sffamily\large\bfseries}{\thesection.}{0.3em}{}
+\titleformat{\subsection}{\normalfont\sffamily\small\bfseries}{\thesubsection.}{0.3em}{}
+
+% make figure/table captions sans-serif small font
+\captionsetup{font={footnotesize,sf},labelfont=bf,labelsep=period}
+
+% configure pdf metadata and link handling
+\hypersetup{
+	pdfauthor={Francisco Rowe},
+	pdftitle={Title},
+	pdfsubject={Title},
+	pdfkeywords={Keywords},
+	pdffitwindow=true,
+	breaklinks=true,
+	colorlinks=false,
+	pdfborder={0 0 0}}
+
+\title{Title\footnote{\textbf{Citation}: Rowe, F., [year]. Title}}
+\author[1]{Francisco Rowe \thanks{\textit{Corresponding author}: F.Rowe-Gonzalez@liverpool.ac.uk}}
+\affil[1]{Geographic Data Science Lab, Department of Geography and Planning, University of Liverpool, Liverpool, United Kingdom}
+
+\date{}
+
+% From pandoc:
+% https://github.com/jgm/pandoc-templates/blob/master/default.latex
+$if(pagestyle)$
+\pagestyle{$pagestyle$}
+$endif$
+$if(csl-refs)$
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+$endif$
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% https://stackoverflow.com/questions/41052687/rstudio-pdf-knit-fails-with-environment-shaded-undefined-error
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+
+\begin{document}
+
+\maketitle
+
+
+\begin{abstract}
+
+Text for abstract
+
+
+%\vspace{1cm}
+\end{abstract}
+
+
+
+\pagebreak
+
+$body$
+
+
+
+
+% print the bibliography
+\setlength{\bibsep}{0.00cm plus 0.05cm} % no space between items
+\bibliographystyle{apalike}
+\bibliography{sim_refs}
+
+
+
+\end{document}
