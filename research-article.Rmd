@@ -14,28 +14,20 @@ editor_options:
 
 # Introduction
 
-add references using @wilson_statistical_1967
+add references using @rowe2022, @rowe2022a
 
 <!--# Add comments using this -->
 
 # Background
 
-
-
 # Data
-
 
 # Methods
 
 # Results
 
-
 # Discussion
 
 # Conclusion
 
-
 # References
-
-
-
