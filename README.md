@@ -1,4 +1,4 @@
-# Template for Research Articles
+# Template for Journal Articles
 
 This repository contains a template for writing up research manuscript integrating technology from [RStudio](https://www.rstudio.com), [Zotero](https://www.zotero.org) and [Rmarkdown](https://rmarkdown.rstudio.com). I love this set up because it:
 
