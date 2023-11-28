@@ -1,0 +1,32 @@
+---
+title: "Title"
+author: Francisco Rowe
+abstract: |
+  **Abstract.** Add abstract text
+format: 
+  docx: 
+   mainfont: Bodoni 72
+   fontsize: 11pt
+bibliography: refs.bib
+editor_options:
+  markdown:
+    wrap: sentence
+---
+
+# Introduction
+
+For references, use @rowe2023urban
+
+
+# Background
+
+# Data
+
+
+# Methods
+
+# Results
+
+# Discussion
+
+# Conclusion

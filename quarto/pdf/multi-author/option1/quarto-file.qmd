@@ -1,0 +1,49 @@
+---
+title: "Title"
+author:
+  - name: Francisco Rowe
+    affiliations:
+      - Geographic Data Science Lab, Department of Geography and Planning, University of Liverpool, Liverpool, United Kingdom
+  - name: Co-author
+    affiliations:
+      - University of X1
+      - University of X2
+abstract: |
+  Add abstract text
+format: 
+  pdf:
+    mainfont: Bodoni 72
+    fontsize: 11pt
+    keep-tex: true
+    template-partials: 
+      - title.tex
+    include-in-header:
+      text: |
+        \usepackage[noblocks]{authblk}
+        \renewcommand*{\Authsep}{, }
+        \renewcommand*{\Authand}{, }
+        \renewcommand*{\Authands}{, }
+        \renewcommand\Affilfont{\small}
+bibliography: refs.bib
+editor_options:
+  markdown:
+    wrap: sentence
+---
+
+# Introduction
+
+For references, use @rowe2023urban
+
+<!--# Write any comments! -->
+
+# Background
+
+# Data
+
+# Methods
+
+# Results
+
+# Discussion
+
+# Conclusion

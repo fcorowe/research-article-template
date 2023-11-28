@@ -1,0 +1,58 @@
+---
+title: "Title"
+author:
+  - name: Francisco Rowe
+    affil-id: 1
+  - name: Co-author A
+    affil-id: 1
+  - name: Co-author B
+    affil-id: 2, 3
+affiliations: 
+  - id: 1
+    name: Geographic Data Science Lab, Department of Geography and Planning, University of Liverpool, Liverpool, United Kingdom
+  - id: 2
+    name: Institution X
+  - id: 3
+    name: Institution Z
+abstract: |
+  Add abstract text
+format: 
+  pdf:
+    header-includes:
+      \usepackage{lipsum}
+      \usepackage{libertine}
+    keep-tex: true
+    template-partials: 
+      - title.tex
+    include-in-header:
+      text: |
+        \usepackage[noblocks]{authblk}
+        \renewcommand*{\Authsep}{, }
+        \renewcommand*{\Authand}{, }
+        \renewcommand*{\Authands}{, }
+        \renewcommand\Affilfont{\small}
+number-sections: true
+editor: visual
+bibliography: refs.bib
+editor_options:
+  markdown:
+    wrap: sentence
+---
+
+# Introduction
+
+For references, use @rowe2023urban
+
+
+# Background
+
+# Data
+
+
+# Methods
+
+# Results
+
+# Discussion
+
+# Conclusion
