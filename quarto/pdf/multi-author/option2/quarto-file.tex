@@ -75,28 +75,38 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
   % turn on hanging indent if param 1 is 1
   \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
   \fi
   % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \usepackage[noblocks]{authblk}
@@ -105,10 +115,6 @@
 \renewcommand*{\Authands}{, }
 \renewcommand\Affilfont{\small}
 \usepackage{lipsum} \usepackage{libertine}
-\makeatletter
-\makeatother
-\makeatletter
-\makeatother
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -145,23 +151,16 @@
 \newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
 \makeatother
 \makeatletter
+\makeatother
+\makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
-\makeatother
-\makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
-\makeatother
-\makeatletter
-\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
-\makeatother
-\makeatletter
-\makeatother
-\makeatletter
 \makeatother
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
+
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
@@ -193,35 +192,36 @@ Planning, University of Liverpool, Liverpool, United Kingdom}
 \begin{abstract}
 Add abstract text
 \end{abstract}
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, breakable, boxrule=0pt, interior hidden, sharp corners, frame hidden, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
 
-\hypertarget{introduction}{%
-\section{Introduction}\label{introduction}}
+\section{Introduction}\label{introduction}
 
 For references, use Rowe et al. (2023)
 
-\hypertarget{background}{%
-\section{Background}\label{background}}
+Nicoletti, Sirenko, and Verma (2022)
 
-\hypertarget{data}{%
-\section{Data}\label{data}}
+\section{Background}\label{background}
 
-\hypertarget{methods}{%
-\section{Methods}\label{methods}}
+\section{Data}\label{data}
 
-\hypertarget{results}{%
-\section{Results}\label{results}}
+\section{Methods}\label{methods}
 
-\hypertarget{discussion}{%
-\section{Discussion}\label{discussion}}
+\section{Results}\label{results}
 
-\hypertarget{conclusion}{%
-\section*{Conclusion}\label{conclusion}}
+\section{Discussion}\label{discussion}
+
+\section*{Conclusion}\label{conclusion}
 \addcontentsline{toc}{section}{Conclusion}
 
-\hypertarget{refs}{}
+\phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-rowe2023urban}{}}%
+\bibitem[\citeproctext]{ref-nicoletti2022}
+Nicoletti, Leonardo, Mikhail Sirenko, and Trivik Verma. 2022.
+{``Disadvantaged Communities Have Lower Access to Urban
+Infrastructure.''} \emph{Environment and Planning B: Urban Analytics and
+City Science} 50 (3): 831--49.
+\url{https://doi.org/10.1177/23998083221131044}.
+
+\bibitem[\citeproctext]{ref-rowe2023urban}
 Rowe, Francisco, Alessia Calafiore, Daniel Arribas-Bel, Krasen
 Samardzhiev, and Martin Fleischmann. 2023. {``Urban Exodus?
 Understanding Human Mobility in Britain During the COVID-19 Pandemic

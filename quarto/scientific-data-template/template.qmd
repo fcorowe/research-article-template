@@ -1,0 +1,105 @@
+---
+title: Data Descriptor for Nature Scientific Data
+author: 
+## listed alphabetically
+    - name: Francisco Rowe
+      affiliation: 
+        name: "1,* "
+    - name: Author Two
+      affiliation: 
+        name: "1,2"
+    - name: Author Three
+      affiliation: 
+        name: "3"
+    - name: Author Four
+      affiliation: 
+        name: "1"
+    - name: Author Five
+      affiliation: 
+        name: "2"
+authornotes:
+    - note: "1"
+      text: Geographic Data Science Lab, Department of Geography and Planning, University of Liverpool, Liverpool, United Kingdom
+    - note: "2"
+      text: Department of Government
+    - note: "3"
+      text: Department of Political Science
+    - note: "*"
+      text: "`f.rowe-gonzalez@liverpool.ac.uk`"
+format:
+  scientific-data-pdf: default
+date: last-modified
+abstract: |
+  This is a manuscript template for Data Descriptor submissions to [Scientific Data](http://www.nature.com/scientificdata). The abstract must be no longer than 170 words, and should succinctly describe the study, the assay(s) performed, the resulting data, and the reuse potential, but should not make any claims regarding new scientific findings. No references are allowed in this section. 
+bibliography: bibliography.bib
+---
+
+Please note: Abbreviations should be introduced at the first mention in the main text – no abbreviations lists or tables should be included. Structure of the main text is provided below.
+
+## Background & Summary {.unnumbered}
+
+(700 words maximum) An overview of the study design, the assay(s) performed, and the created data, including any background information needed to put this study in the context of previous work and the literature. The section should also briefly outline the broader goals that motivated the creation of this dataset and the potential reuse value. We also encourage authors to include a figure that provides a schematic overview of the study and assay(s) design. The Background \& Summary should not include subheadings. This section and the other main body sections of the manuscript should include citations to the literature as needed. 
+
+This template is based on the Data Descriptor template available at <https://www.nature.com/sdata/publish/for-authors>. 
+
+Citations can be done using Quarto syntax. To cite at the end of the sentence use [@50statesSimulations]. Multiple citations can be done together with [@50statesSimulations;@LocalView]. You can also suggest, like [see @LocalView] or just get the year [-@50statesSimulations].
+
+## Methods {.unnumbered}
+
+The Methods should include detailed text describing any steps or procedures used in producing the data, including full descriptions of the experimental design, data acquisition assays, and any computational processing (e.g. normalization, image feature extraction). See the detailed section in our submission guidelines for advice on writing a transparent and reproducible methods section. Related methods should be grouped under corresponding subheadings where possible, and methods should be described in enough detail to allow other researchers to interpret and repeat, if required, the full study. Specific data outputs should be explicitly referenced via data citation (see Data Records and Citing Data, below).
+
+Authors should cite previous descriptions of the methods under use, but ideally the method descriptions should be complete enough for others to understand and reproduce the methods and processing steps without referring to associated publications. There is no limit to the length of the Methods section. Subheadings should not be numbered.
+
+## Data Records {.unnumbered}
+
+The Data Records section should be used to explain each data record associated with this work, including the repository where this information is stored, and to provide an overview of the data files and their formats. Each external data record should be cited numerically in the text of this section, for example \cite{Hao:gidmaps:2014}, and included in the main reference list as described below. A data citation should also be placed in the subsection of the Methods containing the data-collection or analytical procedure(s) used to derive the corresponding record. Providing a direct link to the dataset may also be helpful to readers (\hyperlink{https://doi.org/10.6084/m9.figshare.853801}{https://doi.org/10.6084/m9.figshare.853801}).
+
+Tables should be used to support the data records, and should clearly indicate the samples and subjects (study inputs), their provenance, and the experimental manipulations performed on each (please see 'Tables' below). They should also specify the data output resulting from each data-collection or analytical step, should these form part of the archived record.
+
+## Technical Validation {.unnumbered}
+
+This section presents any experiments or analyses that are needed to support the technical quality of the dataset. This section may be supported by figures and tables, as needed. This is a required section; authors must present information justifying the reliability of their data.
+
+## Usage Notes {.unnumbered}
+
+The Usage Notes should contain brief instructions to assist other researchers with reuse of the data. This may include discussion of software packages that are suitable for analysing the assay data files, suggested downstream processing steps (e.g. normalization, etc.), or tips for integrating or comparing the data records with other datasets. Authors are encouraged to provide code, programs or data-processing workflows if they may help others understand or use the data. Please see our code availability policy for advice on supplying custom code alongside Data Descriptor manuscripts.
+
+For studies involving privacy or safety controls on public access to the data, this section should describe in detail these controls, including how authors can apply to access the data, what criteria will be used to determine who may access the data, and any limitations on data use. 
+
+## Code availability {.unnumbered}
+
+For all studies using custom code in the generation or processing of datasets, a statement must be included under the heading "Code availability", indicating whether and how the code can be accessed, including any restrictions to access. This section should also include information on the versions of any software used, if relevant, and any specific variables or parameters used to generate, test, or process the current dataset. 
+
+
+## References
+
+::: {#refs}
+:::
+
+## Acknowledgements {.unnumbered}
+
+(not compulsory)
+
+Acknowledgements should be brief, and should not include thanks to anonymous referees and editors, or effusive comments. Grant or contribution numbers may be acknowledged.
+
+## Author contributions statement {.unnumbered}
+
+Must include all authors, identified by initials, for example:
+A.A. conceived the experiment(s), A.A. and B.A. conducted the experiment(s), C.A. and D.A. analysed the results. All authors reviewed the manuscript. 
+
+## Competing Interests {.unnumbered}
+
+(mandatory statement)
+
+The corresponding author is responsible for providing a \href{https://www.nature.com/sdata/policies/editorial-and-publishing-policies##competing}{competing interests statement} on behalf of all authors of the paper. This statement must be included in the submitted article file. 
+
+## Figures and Tables  {.unnumbered}
+
+Figures, tables, and their legends, should be included at the end of the document. Figures and tables can be referenced using [Quarto Cross References](https://quarto.org/docs/authoring/cross-references.html)
+
+Authors are encouraged to provide one or more tables that provide basic information on the main ‘inputs’ to the study (e.g. samples, participants, or information sources) and the main data outputs of the study. Tables in the manuscript should generally not be used to present primary data (i.e. measurements). Tables containing primary data should be submitted to an appropriate data repository.
+
+Tables may be provided within the \LaTeX{} document or as separate files (tab-delimited text or Excel files). Legends, where needed, should be included here. Generally, a Data Descriptor should have fewer than ten Tables, but more may be allowed when needed. Tables may be of any size, but only Tables which fit onto a single printed page will be included in the PDF version of the article (up to a maximum of three). 
+
+Due to typesetting constraints, tables that do not fit onto a single A4 page cannot be included in the PDF version of the article and will be made available in the online version only. Any such tables must be labelled in the text as ‘Online-only’ tables and numbered separately from the main table list e.g. ‘Table 1, Table 2, Online-only Table 1’ etc.
+

@@ -12,3 +12,5 @@ The folder contains two templates:
 
 1. a Rmarkdown template 
 2. a Quarto template
+
+This repository contains a Quarto template for Nature Scientific Data which was created by [Christopher T. Kenny](https://github.com/christopherkenny) and can be downloaded directly from his [repository](https://github.com/christopherkenny/scientific-data).
